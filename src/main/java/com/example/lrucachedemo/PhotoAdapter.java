@@ -18,12 +18,12 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ItemViewHold
 
     private Context context;
     private List<String> list = new ArrayList<>();
-    private final BitmapCache bitmapCache;
+    private final LruCacheWrap bitmapLruCache;
 
     public PhotoAdapter(Context context, List<String> list) {
         this.context = context;
         this.list = list;
-        bitmapCache = new BitmapCache();
+        bitmapLruCache = new LruCacheWrap();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ItemViewHold
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        bitmapCache.loadBitmaps(list.get(position), holder.img);
+        bitmapLruCache.loadBitmaps(list.get(position), holder.img);
     }
 
     @Override

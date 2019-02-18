@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.example.lrucachedemo"
+        applicationId "com.com.lrucachedemo"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

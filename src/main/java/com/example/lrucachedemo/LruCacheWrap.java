@@ -13,11 +13,11 @@ import java.net.URL;
  * Created by gengtiantao on 2019/2/12.
  */
 
-public class BitmapCache {
+public class LruCacheWrap {
 
     private final LruCache<String, Bitmap> lruCache;
 
-    public BitmapCache() {
+    public LruCacheWrap() {
         // 获取最大可用的内存空间，使用内存超出这个值会引起OutOfMemory异常（LruCache通过构造函数传入缓存值，以KB为单位）
         int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
         // 使用系统分配给应用程序的八分之一内存来作为缓存大小
